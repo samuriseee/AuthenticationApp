@@ -7,6 +7,7 @@
     <color name="primary_black_BG">#272f32</color>
     <color name="second_white_BG">#e5e0df</color>
     <color name="primary_white_BG">#fefffe</color>
+    <color name="second_black">#211e21</color>
     <color name="black">#000000</color>
     <color name="white">#ffffff</color>
     <color name="purple_200">#FFBB86FC</color>
@@ -14,4 +15,9 @@
     <color name="purple_700">#FF3700B3</color>
     <color name="teal_200">#FF03DAC5</color>
     <color name="teal_700">#FF018786</color>
+    <color name="yellow">#ffdb69</color>
+    <color name="dark_grey">#7b7b7b</color>
+    <color name="light_grey">#d3d3d2</color>
+    <color name="background_card2">#2c2e7c</color>
+    <color name="card_chip2">#7e8cb8</color>
 </resources>

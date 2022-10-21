@@ -5,97 +5,83 @@
     android:layout_height="match_parent"
     tools:context=".HomeFragment">
         <RelativeLayout
+            android:id="@+id/card_header"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@drawable/border_bottom"
             android:layout_alignParentTop="true"
-
+            android:layout_marginTop="10dp"
             android:paddingTop="10dp"
             android:paddingBottom="10dp"
             android:paddingLeft="20dp"
             android:paddingRight="20dp">
                 <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Home"
-                    android:textSize="22dp"
-                    android:textColor="@color/black"
-                    android:layout_alignParentLeft="true"
-                    />
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:background="@drawable/focos2_icon"
+
+                    android:layout_centerVertical="true"
+                    android:layout_alignParentLeft="true" />
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:background="@drawable/ic_profile"
+                    android:text="Account"
+                    android:textSize="18dp"
+                    android:textColor="@color/black"
+                    android:layout_centerVertical="true"
+                    android:layout_centerHorizontal="true"
+                    />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/ic_baseline_menu_24"
+                    android:layout_centerVertical="true"
                     android:layout_alignParentRight="true"
                     />
         </RelativeLayout>
 
         <LinearLayout
-            android:id="@+id/credit_card"
+            android:layout_below="@+id/card_header"
             android:layout_width="match_parent"
-            android:layout_marginLeft="25dp"
-            android:layout_marginRight="25dp"
             android:layout_height="wrap_content"
-            android:background="@color/card_bg"
-            android:layout_above="@+id/title"
-            android:padding="30dp"
-            android:orientation="vertical">
-                <TextView
-                    android:layout_width="60dp"
-                    android:layout_height="40dp"
-                    android:background="@drawable/card_sim_chip"/>
+            android:orientation="vertical"
+            android:layout_marginTop="20dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginBottom="20dp"
+            android:background="@drawable/background_card"
+            android:paddingTop="20dp"
+            android:paddingBottom="20dp"
+            android:paddingLeft="20dp"
+            android:paddingRight="20dp">
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="**** **** **** 1234"
-                        android:textSize="25dp"
-                        android:textColor="@color/card_text_light"
-                        android:textStyle="bold"
-                    android:layout_marginTop="10dp"
-                    android:layout_marginBottom="5dp"/>
-
-                <LinearLayout
-                    android:layout_width="match_parent"
+                    android:text="Account Balance"
+                    android:textSize="20dp"
+                    android:textColor="@color/white"
+                    android:layout_gravity="center"/>
+                <TextView
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:orientation="horizontal"
-                    android:layout_marginTop="15dp">
-                        <LinearLayout
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:orientation="vertical">
-                                <TextView
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:text="CardHolder"
-                                    android:textSize="18dp"
-                                    android:textColor="@color/card_text"/>
-                                <TextView
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:text="John Wayne"
-                                    android:textSize="18dp"
-                                    android:textColor="@color/card_text_light"/>
-                        </LinearLayout>
-                        <LinearLayout
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:orientation="vertical"
-                            android:layout_marginLeft="50dp"
-                            >
-                                <TextView
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:text="Expiration"
-                                    android:textSize="18dp"
-                                    android:textColor="@color/card_text"/>
-                                <TextView
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:text="November 11"
-                                    android:textSize="18dp"
-                                    android:textColor="@color/card_text_light"/>
-                        </LinearLayout>
-                </LinearLayout>
+                    android:text="₱ 0.00"
+                    android:textSize="30dp"
+                    android:textColor="@color/white"
+                    android:layout_gravity="center"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Account Number"
+                    android:textSize="20dp"
+                    android:textColor="@color/white"
+                    android:layout_gravity="center"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="0000000000000000"
+                    android:textSize="20dp"
+                    android:textColor="@color/white"
+                    android:layout_gravity="center"/>
         </LinearLayout>
         <RelativeLayout
             android:id="@+id/title"
@@ -107,7 +93,6 @@
             android:paddingRight="20dp"
             android:paddingTop="10dp"
             android:paddingBottom="10dp"
-            android:layout_marginTop="5dp"
             android:layout_marginBottom="-15dp">
                 <TextView
                     android:layout_width="wrap_content"
@@ -121,7 +106,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="$1000"
+                    android:text="$****"
                     android:textSize="17dp"
                     android:textStyle="bold"
                     android:textColor="@color/black"
@@ -129,11 +114,12 @@
                     />
         </RelativeLayout>
         <ListView
+            android:paddingTop="20dp"
             android:id="@+id/listView"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_alignParentBottom="true"
-            android:paddingBottom="60dp"
+            android:paddingBottom="80dp"
             />
 
 </RelativeLayout>

@@ -5,6 +5,7 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentTransaction;
 
 import android.os.Bundle;
+import android.view.View;
 
 import com.example.authenticationapp.databinding.ActivityMainBinding;
 
@@ -12,6 +13,7 @@ public class MainActivity extends AppCompatActivity {
     ActivityMainBinding binding;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        // getWindow().getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR);
         super.onCreate(savedInstanceState);
         binding = ActivityMainBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
@@ -24,9 +26,12 @@ public class MainActivity extends AppCompatActivity {
                 case R.id.home:
                     replaceFragment(new HomeFragment());
                     break;
-/*                case R.id.:
-                    getSupportFragmentManager().beginTransaction().replace(R.id.fragmentContainer, new SettingFragment()).commit();
-                    return true;*/
+                case R.id.card:
+                    replaceFragment(new CardFragment());
+                    break;
+                case R.id.transfer:
+                    replaceFragment(new TransactionDetailsFragment());
+                    break;
             }
             return true;
         });

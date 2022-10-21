@@ -1,12 +1,15 @@
 package com.example.authenticationapp;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentTransaction;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
 import java.util.ArrayList;
@@ -68,14 +71,27 @@ public class HomeFragment extends Fragment {
         View v = inflater.inflate(R.layout.fragment_home, container, false);
         listview = v.findViewById(R.id.listView);
         ArrayList<Transaction> arrayList = new ArrayList<>();
-        arrayList.add(new Transaction("Amazon", "$100", "12/12/2020", "Debit"));
-        arrayList.add(new Transaction("Walmart", "$200", "12/12/2020", "Debit"));
-        arrayList.add(new Transaction("Target", "$300", "12/12/2020", "Debit"));
-        arrayList.add(new Transaction("Walmart", "$400", "12/12/2020", "Debit"));
-        arrayList.add(new Transaction("Amazon", "$500", "12/12/2020", "Debit"));
+        arrayList.add(new Transaction(R.drawable.ic_baseline_local_dining_24,"Restaurant", "$100", "12/12/2020", "Debit"));
+        arrayList.add(new Transaction(R.drawable.ic_baseline_star_outline_24,"Walmart", "$200", "12/12/2020", "Debit"));
+        arrayList.add(new Transaction(R.drawable.love,"Target", "$300", "12/12/2020", "Debit"));
+        arrayList.add(new Transaction(R.drawable.ic_baseline_local_dining_24,"Restaurant", "$400", "12/12/2020", "Debit"));
+        arrayList.add(new Transaction(R.drawable.ic_baseline_star_outline_24,"Amazon", "$500", "12/12/2020", "Debit"));
 
         ListApdater transactionAdapter = new ListApdater(getActivity(),R.layout.list_row, arrayList);
         listview.setAdapter(transactionAdapter);
+/*        ArrayAdapter arrayAdapter = new ArrayAdapter(getActivity(), R.layout.list_row, arrayList);
+        listview.setAdapter(arrayAdapter);
+*//*        listview.setOnItemClickListener((parent, view, position, id) -> {
+            Intent intent = new Intent(getActivity(), DetailsActivity.class);
+            intent.putExtra("name", arrayList.get(position).getName());
+            intent.putExtra("amount", arrayList.get(position).getAmount());
+            intent.putExtra("date", arrayList.get(position).getDate());
+            intent.putExtra("type", arrayList.get(position).getType());
+            intent.putExtra("image", arrayList.get(position).getImage());
+            startActivity(intent);
+        });*/
+
         return v;
     }
+
 }

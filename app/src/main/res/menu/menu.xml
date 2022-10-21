@@ -4,6 +4,13 @@
         android:title="Home"
         android:icon="@drawable/ic_home"
         />
+    <item android:id="@+id/card"
+        android:title="Card"
+        android:icon="@drawable/ic_baseline_credit_card_24"
+        />
+    <item android:id="@+id/transfer"
+        android:title=""
+        />
     <item android:id="@+id/main"
         android:title="Main"
         android:icon="@drawable/love"

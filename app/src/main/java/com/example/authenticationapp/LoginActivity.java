@@ -36,7 +36,7 @@ public class LoginActivity extends AppCompatActivity {
         User user = (User) getIntent().getSerializableExtra("user");
         login.setOnClickListener(v -> {
             if (user != null) {
-                if (email.getEditText().getText().toString().equals("1")/*user.getEmail().equals(email.getEditText().getText().toString()) && user.getPassword().equals(password.getEditText().getText().toString())*/) {
+                if (user.getEmail().equals(email.getEditText().getText().toString()) && user.getPassword().equals(password.getEditText().getText().toString())) {
                     startActivity(new Intent(LoginActivity.this, MainActivity.class));
                 } else {
                     Toast.makeText(LoginActivity.this, "Invalid Credentials", Toast.LENGTH_SHORT).show();

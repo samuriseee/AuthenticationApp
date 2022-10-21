@@ -5,6 +5,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -30,10 +31,13 @@ public class ListApdater extends ArrayAdapter<Transaction> {
         TextView tvAmount = convertView.findViewById(R.id.amount);
         TextView tvDate = convertView.findViewById(R.id.date);
         TextView tvType = convertView.findViewById(R.id.type);
+        ImageView imageView = convertView.findViewById(R.id.imageView);
         tvName.setText(getItem(postion).getName());
         tvAmount.setText(getItem(postion).getAmount());
         tvDate.setText(getItem(postion).getDate());
         tvType.setText(getItem(postion).getType());
+        imageView.setImageResource(getItem(postion).getImage());
+
         return convertView;
     }
 }
